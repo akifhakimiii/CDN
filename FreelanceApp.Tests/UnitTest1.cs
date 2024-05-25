@@ -1,12 +1,11 @@
-using Xunit;
-
-namespace FreelanceApp.Tests;
-
-public class UnitTest1
+namespace FreelanceApp.Tests
 {
-    [Fact]
-    public void Test1()
+    public class UnitTest1
     {
+        [Fact]
+        public void Test1()
+        {
 
+        }
     }
 }

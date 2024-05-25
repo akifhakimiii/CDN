@@ -6926,6 +6926,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "FakeItEasy >= 8.2.0",
+      "FluentAssertions >= 6.12.0",
       "FreelanceApp >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "coverlet.collector >= 6.0.0",
@@ -6986,6 +6988,14 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "FakeItEasy": {
+            "target": "Package",
+            "version": "[8.2.0, )"
+          },
+          "FluentAssertions": {
+            "target": "Package",
+            "version": "[6.12.0, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.8.0, )"
