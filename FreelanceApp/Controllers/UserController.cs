@@ -105,7 +105,7 @@ namespace FreelanceApp.Controllers
         {
             try
             {
-                if(!ModelState.IsValid)
+                if (!ModelState.IsValid)
                     return BadRequest(ModelState);
 
                 var existingUser = _userRepository.GetUserById(id);
@@ -114,24 +114,25 @@ namespace FreelanceApp.Controllers
                 {
                     return NotFound($"User with ID {id} not found.");
                 }
-                if (_userRepository.GetUserByEmail(userDto.Email) != null)
+
+                // Check if email, username, or phone number is taken by another user
+                var conflictingUser = _userRepository.GetConflictingUser(userDto, id);
+                if (conflictingUser != null)
                 {
-                    return BadRequest("Email already exists.");
+                    if (conflictingUser.Email == userDto.Email)
+                        return BadRequest("Email already exists.");
+
+                    if (conflictingUser.Username == userDto.Username)
+                        return BadRequest("Username already exists.");
+
+                    if (conflictingUser.PhoneNumber == userDto.PhoneNumber)
+                        return BadRequest("Phone number already exists.");
                 }
 
-                if (_userRepository.GetUserByUsername(userDto.Username) != null)
-                {
-                    return BadRequest("Username already exists.");
-                }
-
-                if (_userRepository.GetUserByPhoneNumber(userDto.PhoneNumber) != null)
-                {
-                    return BadRequest("Phone number already exists.");
-                }
-;
                 var userModel = _userRepository.UpdateUser(id, userDto);
                 if (userModel == null)
                     return NotFound();
+
                 return Ok(userModel.ToUserDto());
             }
             catch (Exception ex)
@@ -140,7 +141,6 @@ namespace FreelanceApp.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
-
 
         [HttpDelete("{id:int}")]
         public IActionResult DeleteUser([FromRoute] int id)

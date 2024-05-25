@@ -18,5 +18,6 @@ namespace FreelanceApp.Interfaces
         User? GetUserByUsername(string username);
         User? GetUserByPhoneNumber(string phoneNumber);
         User? DeleteUser(int id);
+        User? GetConflictingUser(UpdateUserDto userDto, int userId);
     }
 }

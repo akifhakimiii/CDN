@@ -15,6 +15,14 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Configure CORS
+app.UseCors(options =>
+{
+    options.WithOrigins("http://localhost:3000") // Replace with your React application's origin
+           .AllowAnyHeader()
+           .AllowAnyMethod();
+});
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

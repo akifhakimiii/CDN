@@ -93,6 +93,13 @@ namespace FreelanceApp.Repository
 
             return user;
         }
+        public User? GetConflictingUser(UpdateUserDto userDto, int userId)
+        {
+            return _context.Users
+                .FirstOrDefault(u => 
+                    (u.Email == userDto.Email || u.Username == userDto.Username || u.PhoneNumber == userDto.PhoneNumber) && u.Id != userId);
+        }
+
         public User? GetUserByEmail(string email)
         {
             return _context.Users.FirstOrDefault(u => u.Email == email);
