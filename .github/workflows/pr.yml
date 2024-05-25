@@ -24,5 +24,8 @@ jobs:
     - name: Build project
       run: dotnet build --configuration Release --no-restore
 
+    - name: Change to FreelanceApp.Tests directory
+      run: cd FreelanceApp.Tests
+
     - name: Run tests
-      run: dotnet test FreelanceApp.Tests/FreelanceApp.Tests.csproj --configuration Release --no-build --verbosity normal
+      run: dotnet test
