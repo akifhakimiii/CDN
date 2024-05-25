@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\src\\FreelanceApp\\FreelanceApp.Tests\\FreelanceApp.Tests.csproj": {}
+    "E:\\src\\CDN\\FreelanceApp.Tests\\FreelanceApp.Tests.csproj": {}
   },
   "projects": {
-    "E:\\src\\FreelanceApp\\FreelanceApp.Tests\\FreelanceApp.Tests.csproj": {
+    "E:\\src\\CDN\\FreelanceApp.Tests\\FreelanceApp.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\src\\FreelanceApp\\FreelanceApp.Tests\\FreelanceApp.Tests.csproj",
+        "projectUniqueName": "E:\\src\\CDN\\FreelanceApp.Tests\\FreelanceApp.Tests.csproj",
         "projectName": "FreelanceApp.Tests",
-        "projectPath": "E:\\src\\FreelanceApp\\FreelanceApp.Tests\\FreelanceApp.Tests.csproj",
+        "projectPath": "E:\\src\\CDN\\FreelanceApp.Tests\\FreelanceApp.Tests.csproj",
         "packagesPath": "C:\\Users\\akifh\\.nuget\\packages\\",
-        "outputPath": "E:\\src\\FreelanceApp\\FreelanceApp.Tests\\obj\\",
+        "outputPath": "E:\\src\\CDN\\FreelanceApp.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\src\\FreelanceApp\\FreelanceApp\\FreelanceApp.csproj": {
-                "projectPath": "E:\\src\\FreelanceApp\\FreelanceApp\\FreelanceApp.csproj"
+              "E:\\src\\CDN\\FreelanceApp\\FreelanceApp.csproj": {
+                "projectPath": "E:\\src\\CDN\\FreelanceApp\\FreelanceApp.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "E:\\src\\FreelanceApp\\FreelanceApp\\FreelanceApp.csproj": {
+    "E:\\src\\CDN\\FreelanceApp\\FreelanceApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\src\\FreelanceApp\\FreelanceApp\\FreelanceApp.csproj",
+        "projectUniqueName": "E:\\src\\CDN\\FreelanceApp\\FreelanceApp.csproj",
         "projectName": "FreelanceApp",
-        "projectPath": "E:\\src\\FreelanceApp\\FreelanceApp\\FreelanceApp.csproj",
+        "projectPath": "E:\\src\\CDN\\FreelanceApp\\FreelanceApp.csproj",
         "packagesPath": "C:\\Users\\akifh\\.nuget\\packages\\",
-        "outputPath": "E:\\src\\FreelanceApp\\FreelanceApp\\obj\\",
+        "outputPath": "E:\\src\\CDN\\FreelanceApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -135,6 +135,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "FakeItEasy": {
               "target": "Package",
               "version": "[8.2.0, )"

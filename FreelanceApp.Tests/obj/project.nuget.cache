@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "asLoUOSEN1c=",
+  "dgSpecHash": "/bcNUDb138Q=",
   "success": true,
-  "projectFilePath": "E:\\src\\FreelanceApp\\FreelanceApp.Tests\\FreelanceApp.Tests.csproj",
+  "projectFilePath": "E:\\src\\CDN\\FreelanceApp.Tests\\FreelanceApp.Tests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\akifh\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\akifh\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\akifh\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\akifh\\.nuget\\packages\\fakeiteasy\\8.2.0\\fakeiteasy.8.2.0.nupkg.sha512",
