@@ -223,3 +223,4 @@ E:\src\CDN\FreelanceApp\obj\Debug\net8.0\refint\FreelanceApp.dll
 E:\src\CDN\FreelanceApp\obj\Debug\net8.0\FreelanceApp.pdb
 E:\src\CDN\FreelanceApp\obj\Debug\net8.0\FreelanceApp.genruntimeconfig.cache
 E:\src\CDN\FreelanceApp\obj\Debug\net8.0\ref\FreelanceApp.dll
+E:\src\CDN\FreelanceApp\bin\Debug\net8.0\dotenv.net.dll

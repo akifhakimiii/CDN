@@ -1,4 +1,5 @@
 ﻿using System;
+using dotenv.net;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,12 +21,16 @@ public partial class CdnMainContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
+            var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION");
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            optionsBuilder.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+                if (!string.IsNullOrEmpty(connectionString))
+                {
+                    optionsBuilder.UseNpgsql(connectionString);
+                }
         }
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,9 +1,12 @@
 using FreelanceApp.Interfaces;
+using dotenv.net;
 using FreelanceApp.Models;
 using FreelanceApp.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
+DotEnv.Load();
+var fe_url = Environment.GetEnvironmentVariable("FE_URL");
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddDbContext<CdnMainContext>();
@@ -16,12 +19,15 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure CORS
-app.UseCors(options =>
+if (!string.IsNullOrEmpty(fe_url))
 {
-    options.WithOrigins("http://localhost:3000") // Replace with your React application's origin
-           .AllowAnyHeader()
-           .AllowAnyMethod();
-});
+    app.UseCors(options =>
+    {
+        options.WithOrigins(fe_url)
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

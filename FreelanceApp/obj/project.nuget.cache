@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "zv3IxA4N+XQ=",
+  "dgSpecHash": "iwt3Kg5zMgo=",
   "success": true,
   "projectFilePath": "E:\\src\\CDN\\FreelanceApp\\FreelanceApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\akifh\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\akifh\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\akifh\\.nuget\\packages\\dotenv.net\\3.1.3\\dotenv.net.3.1.3.nupkg.sha512",
     "C:\\Users\\akifh\\.nuget\\packages\\fakeiteasy\\8.2.0\\fakeiteasy.8.2.0.nupkg.sha512",
     "C:\\Users\\akifh\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\akifh\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
