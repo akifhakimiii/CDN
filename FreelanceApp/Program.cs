@@ -23,7 +23,7 @@ if (!string.IsNullOrEmpty(fe_url))
 {
     app.UseCors(options =>
     {
-        options.AllowAnyOrigin()
+        options.WithOrigins(fe_url)
                .AllowAnyHeader()
                .AllowAnyMethod();
     });
