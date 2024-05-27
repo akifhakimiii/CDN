@@ -86,9 +86,11 @@ namespace FreelanceApp.Tests.Controller
             result.Should().BeOfType<CreatedAtActionResult>();
 
             var createdAtActionResult = result as CreatedAtActionResult;
-            createdAtActionResult.ActionName.Should().Be(nameof(UserController.GetUserById));
-            createdAtActionResult.RouteValues["id"].Should().Be(user.Id);
-            createdAtActionResult.Value.Should().BeEquivalentTo(user);
+            createdAtActionResult.Should().NotBeNull();
+            createdAtActionResult!.ActionName.Should().Be(nameof(UserController.GetUserById));
+            createdAtActionResult!.RouteValues.Should().NotBeNull();
+            createdAtActionResult!.RouteValues!["id"].Should().Be(user.Id);
+            createdAtActionResult!.Value.Should().BeEquivalentTo(user);
         }
     }
 }
