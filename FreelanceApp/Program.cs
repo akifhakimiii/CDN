@@ -23,7 +23,7 @@ if (!string.IsNullOrEmpty(fe_url))
 {
     app.UseCors(options =>
     {
-        options.WithOrigins(fe_url)
+        options.AllowAnyOrigin()
                .AllowAnyHeader()
                .AllowAnyMethod();
     });
@@ -34,7 +34,7 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 
-// app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();
 
