@@ -1,29 +1,24 @@
-# Stage 1: Build the application
+# Use the official .NET Core SDK as a parent image
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copy the solution file
-COPY *.sln .
-
-# Copy all project files
-COPY FreelanceApp/*.csproj ./FreelanceApp/
-COPY FreelanceApp.Tests/*.csproj ./FreelanceApp.Tests/
-
-# Restore dependencies
+# Copy the project file and restore any dependencies (use .csproj for the project name)
+COPY ./FreelanceApp/*.csproj ./
 RUN dotnet restore
 
 # Copy the rest of the application code
 COPY . .
 
-# Build the project
-RUN dotnet build --no-restore -c Release
+# Publish the application
+RUN dotnet publish -c Release -o out
 
-# Stage 2: Publish the application
-FROM build AS publish
-RUN dotnet publish --no-build -c Release -o /app/publish
-
-# Stage 3: Build the runtime image
+# Build the runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/out ./
+
+# Expose the port your application will run on
+EXPOSE 80
+
+# Start the application
 ENTRYPOINT ["dotnet", "FreelanceApp.dll"]
