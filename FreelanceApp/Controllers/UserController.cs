@@ -115,7 +115,6 @@ namespace FreelanceApp.Controllers
                     return NotFound($"User with ID {id} not found.");
                 }
 
-                // Check if email, username, or phone number is taken by another user
                 var conflictingUser = _userRepository.GetConflictingUser(userDto, id);
                 if (conflictingUser != null)
                 {

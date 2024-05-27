@@ -29,7 +29,6 @@ if (!string.IsNullOrEmpty(fe_url))
     });
 }
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
