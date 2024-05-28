@@ -14,6 +14,8 @@ Steps:
 3. If you want to use server-hosted db, skip this part, if you want to use fresh local db:
     - Create a db named "cdn_main"
     - update .env variable to point to local db
+    - install dotnet-ef : dotnet tool install --global dotnet-ef
+    - run dotnet restore: dotnet restore
     - run db update: dotnet ef database update
 4. cd to FreelanceApp folder
     - cd FreelanceApp
